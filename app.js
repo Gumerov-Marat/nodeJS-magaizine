@@ -1,4 +1,5 @@
 const http = require ('http');
+var fs = require('fs');
 
 //http.createServer().listen(3000);
 http.createServer(function (request, responce) {
@@ -9,8 +10,10 @@ http.createServer(function (request, responce) {
   responce.setHeader("Content-Type", "text/html; charset=utf-8;")
 
   if (request.url == '/'){
-     responce.end(`Main <b>Hello</b>  Привет`);
-  } else if (request.url == '/cat') {
-     responce.end(`Category <h2>Hello</h2>`);
+     responce.end('Main <b>Hello</b>  Привет');
+  } else if (request.url == '/dat') {
+    let myFile = fs.readFileSync('page_1.dat');
+    console.log(myFile);
+     responce.end(myFile);
   }
 }).listen(3000);
