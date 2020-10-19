@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-magaizine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gumerov-Marat/nodeJS-magaizine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gumerov-Marat/nodeJS-magaizine/issues"
+  },
+  "homepage": "https://github.com/Gumerov-Marat/nodeJS-magaizine#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
