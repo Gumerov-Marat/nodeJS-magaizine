@@ -1,19 +1,16 @@
-const http = require ('http');
-var fs = require('fs');
+const express = require('express');
+let app = express();
+app.use(express.static('public'));
 
-//http.createServer().listen(3000);
-http.createServer(function (request, responce) {
-  console.log(request.url);
-  console.log(request.method);
-  console.log(request.headers['user-agent']);
+app.listen(3000, function () {
+  console.log('node express work on 3000')
+});
 
-  responce.setHeader("Content-Type", "text/html; charset=utf-8;")
+app.get('/', function (req, res) {
+  console.log('load /');
+  res.render('index.html');
+});
 
-  if (request.url == '/'){
-     responce.end('Main <b>Hello</b>  Привет');
-  } else if (request.url == '/dat') {
-    let myFile = fs.readFileSync('page_1.dat');
-    console.log(myFile);
-     responce.end(myFile);
-  }
-}).listen(3000);
+app.get('/cat', function (req, res) {
+  res.end('cat');
+});
